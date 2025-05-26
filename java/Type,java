@@ -1,0 +1,33 @@
+package cogni;
+
+public class Type {
+	    public static void main(String[] args) {
+	        // Integer type
+	        int myInt = 25;
+	        
+	        // Float type (note the 'f' suffix)
+	        float myFloat = 5.75f;
+	        
+	        // Double type
+	        double myDouble = 19.99;
+	        
+	        // Character type
+	        char myChar = 'A';
+	        
+	        // Boolean type
+	        boolean myBoolean = true;
+	        
+	        // String type
+	        String myString = "Hello, Java!";
+
+	        // Display all values
+	        System.out.println("Integer value: " + myInt);
+	        System.out.println("Float value: " + myFloat);
+	        System.out.println("Double value: " + myDouble);
+	        System.out.println("Character value: " + myChar);
+	        System.out.println("Boolean value: " + myBoolean);
+	        System.out.println("String value: " + myString);
+	    }
+	}
+
+
