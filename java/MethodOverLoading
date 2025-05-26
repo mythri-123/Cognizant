@@ -1,0 +1,28 @@
+package cogni;
+
+public class MethodOverLoading {
+
+	    public double sum(double a, double b) {
+	        return a + b;
+	    }
+
+	    public int sum(int a, int b) {
+	        return a + b;
+	    }
+
+	 
+	    public int sum(int a, int b, int c) {
+	        return a + b + c;
+	    }
+
+	    public static void main(String[] args) {
+	        MethodOverLoading demo = new MethodOverLoading();
+
+	        
+	        System.out.println("Sum of two doubles: " + demo.sum(5.5, 4.5));
+	        System.out.println("Sum of two integers: " + demo.sum(10, 20));
+	        System.out.println("Sum of three integers: " + demo.sum(1, 2, 3));
+	    }
+	}
+
+
