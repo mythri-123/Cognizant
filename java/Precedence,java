@@ -1,0 +1,57 @@
+package cogni;
+
+public class Precedence {
+	    public static void main(String[] args) {
+	        int a = 10, b = 5, c = 2;
+	        int result1 = a + b * c; // 10 + (5 * 2) = 20
+	        System.out.println("Arithmetic (a + b * c): " + result1);
+
+	        int result2 = (a + b) * c; // (10 + 5) * 2 = 30
+	        System.out.println("With parentheses ((a + b) * c): " + result2);
+
+	        
+	        boolean rel = a > b && b > c; // true && true
+	        System.out.println("Relational (a > b && b > c): " + rel);
+
+	      
+	        boolean logic = (a > b || b < c) && !(a == 5); // true || false = true && true
+	        System.out.println("Logical ((a > b || b < c) && !(a == 5)): " + logic);
+
+	   
+	        int bitwise1 = a & b;  // 10 & 5 = 0
+	        int bitwise2 = a | b;  // 10 | 5 = 15
+	        int bitwise3 = a ^ b;  // 10 ^ 5 = 15
+	        int bitwise4 = ~a;     // ~10 = -11 (2's complement)
+	        int bitwise5 = a << 1; // 10 << 1 = 20
+	        int bitwise6 = a >> 1; // 10 >> 1 = 5
+	        System.out.println("Bitwise AND (a & b): " + bitwise1);
+	        System.out.println("Bitwise OR (a | b): " + bitwise2);
+	        System.out.println("Bitwise XOR (a ^ b): " + bitwise3);
+	        System.out.println("Bitwise NOT (~a): " + bitwise4);
+	        System.out.println("Left Shift (a << 1): " + bitwise5);
+	        System.out.println("Right Shift (a >> 1): " + bitwise6);
+
+	       
+	        int assign = 10;
+	        assign += 5;
+	        System.out.println("Assignment (assign += 5): " + assign);
+
+	       
+	        int x = 5;
+	        int preInc = ++x; 
+	        int postDec = x--; 
+	        System.out.println("Unary (++x): " + preInc);
+	        System.out.println("Unary (x--): " + postDec);
+
+	       
+	        int max = (a > b) ? a : b;
+	        System.out.println("Ternary ((a > b) ? a : b): " + max);
+
+	        System.out.print("Comma operator in for-loop: ");
+	        for (int i = 0, j = 5; i < j; i++, j--) {
+	            System.out.print("(" + i + "," + j + ") ");
+	        }
+	        System.out.println();
+	    }
+	}
+
