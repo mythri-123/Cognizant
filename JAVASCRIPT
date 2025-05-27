@@ -1,0 +1,843 @@
+Conversation opened. 1 unread message.
+
+Skip to content
+Using G. Pulla Reddy Engineering College Mail with screen readers
+
+1 of 3,201
+all
+Inbox
+229X1A3312 KOMME CHARITHA <229x1a3312@gprec.ac.in>
+Attachments
+9:45 PM (16 minutes ago)
+to me
+
+Be careful with this message.
+This message contains one or more attachments that can't be verified as safe. Avoid downloading them unless you know the sender and are confident that this email is legitimate.
+
+Report spamLooks safe
+
+ 6 Attachments
+  •  Scanned by Gmail
+Downloading these attachments is disabled. If you want to download these and you trust this message, click "Looks safe" in the banner above.
+
+Explain
+1.
+index.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Portal</title>
+</head>
+<body>
+  <h1>Welcome to the Community Portal</h1>
+
+  <!-- Link to external JS -->
+  <script src="main.js"></script>
+</body>
+</html>
+
+main.js:
+
+// Log a welcome message
+console.log("Welcome to the Community Portal");
+
+// Notify when page is fully loaded
+window.onload = function() {
+  alert("Page fully loaded!");
+};
+
+
+2.
+main.js:
+// Declare constants for event details
+const eventName = "Tech Community Meetup";
+const eventDate = "2025-06-15";
+
+// Declare a variable for available seats
+let availableSeats = 50;
+
+// Display event information using template literals
+console.log(`Event: ${eventName}`);
+console.log(`Date: ${eventDate}`);
+console.log(`Available Seats: ${availableSeats}`);
+
+// Simulate registration: decrease seat count
+availableSeats--;
+console.log(`Seat booked! Seats left: ${availableSeats}`);
+
+// Simulate cancellation: increase seat count
+availableSeats++;
+console.log(`Registration canceled. Seats available again: ${availableSeats}`);
+
+3.
+main.js:
+// Today's date
+const today = new Date("2025-05-27"); // for consistent demo results
+
+// Event list (array of objects)
+const events = [
+  { name: "Tech Conference", date: "2025-06-01", seats: 20 },
+  { name: "AI Workshop", date: "2025-04-20", seats: 15 },
+  { name: "Web Dev Bootcamp", date: "2025-06-05", seats: 0 },
+  { name: "Design Meetup", date: "2025-06-10", seats: 10 },
+];
+
+// Display only valid events
+console.log("Upcoming Events with Available Seats:");
+events.forEach(event => {
+  const eventDate = new Date(event.date);
+
+  if (eventDate > today && event.seats > 0) {
+    console.log(`- ${event.name} on ${event.date} (Seats: ${event.seats})`);
+  } else {
+    console.log(`(Hidden) ${event.name} — past or full.`);
+  }
+});
+
+// Registration function wrapped in try-catch
+function register(event) {
+  try {
+    if (event.seats <= 0) {
+      throw new Error("No seats available.");
+    }
+
+    event.seats--;
+    console.log(`✅ Registered for ${event.name}. Seats left: ${event.seats}`);
+  } catch (error) {
+    console.error(`❌ Cannot register for ${event.name}: ${error.message}`);
+  }
+}
+
+// Simulate registrations
+console.log("\nRegistration Attempts:");
+register(events[0]); // should succeed
+register(events[2]); // should fail (no seats)
+
+
+4.
+main.js:
+// Event storage
+let events = [];
+
+// Add an event
+function addEvent(name, date, category, seats) {
+  events.push({ name, date, category, seats });
+}
+
+// Closure to track total registrations by category
+function createCategoryTracker() {
+  const counts = {};
+
+  return function(category) {
+    if (!counts[category]) counts[category] = 0;
+    counts[category]++;
+    console.log(`🧮 Total ${category} registrations: ${counts[category]}`);
+  };
+}
+
+const trackRegistration = createCategoryTracker(); // Closure in action
+
+// Register user to event
+function registerUser(eventName) {
+  const event = events.find(e => e.name === eventName);
+
+  if (!event) {
+    console.error("Event not found.");
+    return;
+  }
+
+  if (event.seats <= 0) {
+    console.error("❌ No seats available for", eventName);
+    return;
+  }
+
+  event.seats--;
+  console.log(`✅ Registered for ${event.name}. Seats left: ${event.seats}`);
+  trackRegistration(event.category); // Track by category
+}
+
+// Filter events by category using callback
+function filterEventsByCategory(callback) {
+  return events.filter(callback);
+}
+
+//
+// --- Demo ---
+//
+addEvent("JS Workshop", "2025-07-10", "Coding", 25);
+addEvent("UI/UX Meetup", "2025-07-12", "Design", 15);
+addEvent("Python Bootcamp", "2025-07-14", "Coding", 0);
+addEvent("Product Panel", "2025-07-15", "Business", 10);
+
+// Show only coding events with available seats
+const codingEvents = filterEventsByCategory(event =>
+  event.category === "Coding" && event.seats > 0
+);
+console.log("🎯 Available Coding Events:", codingEvents);
+
+// Register users
+registerUser("JS Workshop");
+registerUser("Python Bootcamp"); // Should fail
+registerUser("UI/UX Meetup");
+
+
+5.
+// Constructor function for Event
+function Event(name, date, category, seats) {
+  this.name = name;
+  this.date = date;
+  this.category = category;
+  this.seats = seats;
+}
+
+// Add method to prototype
+Event.prototype.checkAvailability = function () {
+  return this.seats > 0 ? "Seats available" : "Sold out";
+};
+
+// Create an event instance
+const event1 = new Event("Frontend Workshop", "2025-07-20", "Web", 30);
+
+// Use the prototype method
+console.log(event1.checkAvailability()); // Seats available
+
+// List keys and values using Object.entries
+console.log("Event Details:");
+for (const [key, value] of Object.entries(event1)) {
+  console.log(`${key}: ${value}`);
+}
+
+
+
+6.
+// Array to hold community events
+let events = [];
+
+// Add new events using .push()
+events.push(
+  { name: "Guitar Jam", category: "Music", date: "2025-07-01" },
+  { name: "Painting Class", category: "Art", date: "2025-07-05" },
+  { name: "Baking Workshop", category: "Cooking", date: "2025-07-10" },
+  { name: "Jazz Night", category: "Music", date: "2025-07-12" }
+);
+
+// Filter only music events
+const musicEvents = events.filter(event => event.category === "Music");
+
+console.log("🎵 Music Events:");
+musicEvents.forEach(event => console.log(`- ${event.name} on ${event.date}`));
+
+// Format display cards using .map()
+const formattedCards = events.map(event => {
+  return `📌 ${event.category} Event: ${event.name} on ${event.date}`;
+});
+
+console.log("\n🪪 Formatted Display Cards:");
+formattedCards.forEach(card => console.log(card));
+
+
+7.
+index.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Community Events</title>
+  <style>
+    .event-card {
+      border: 1px solid #ccc;
+      padding: 12px;
+      margin-bottom: 10px;
+      max-width: 300px;
+      border-radius: 6px;
+    }
+    button {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Community Events</h1>
+  <div id="events-container"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+main;js:
+
+const events = [
+  { id: 1, name: "Photography Workshop", date: "2025-06-10", seats: 5 },
+  { id: 2, name: "Yoga Class", date: "2025-06-15", seats: 3 },
+  { id: 3, name: "Cooking Masterclass", date: "2025-06-20", seats: 0 },
+];
+
+const container = document.querySelector("#events-container");
+
+// Render all events dynamically
+function renderEvents() {
+  container.innerHTML = ""; // Clear previous
+
+  events.forEach(event => {
+    const card = document.createElement("div");
+    card.className = "event-card";
+
+    // Event info
+    const info = document.createElement("p");
+    info.textContent = `${event.name} - ${event.date} (Seats left: ${event.seats})`;
+
+    // Register button
+    const registerBtn = document.createElement("button");
+    registerBtn.textContent = "Register";
+    registerBtn.disabled = event.seats === 0;
+
+    // Cancel button
+    const cancelBtn = document.createElement("button");
+    cancelBtn.textContent = "Cancel";
+    cancelBtn.disabled = event.seats === 5; // Assume max seats = 5 for demo
+
+    // Register click event
+    registerBtn.addEventListener("click", () => {
+      if (event.seats > 0) {
+        event.seats--;
+        renderEvents();
+      }
+    });
+
+    // Cancel click event
+    cancelBtn.addEventListener("click", () => {
+      if (event.seats < 5) {
+        event.seats++;
+        renderEvents();
+      }
+    });
+
+    card.appendChild(info);
+    card.appendChild(registerBtn);
+    card.appendChild(cancelBtn);
+
+    container.appendChild(card);
+  });
+}
+
+// Initial render
+renderEvents();
+
+
+
+8.
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Handling Demo</title>
+  <style>
+    .event-card {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Community Events</h1>
+
+  <label for="categoryFilter">Filter by Category: </label>
+  <select id="categoryFilter">
+    <option value="All">All</option>
+    <option value="Music">Music</option>
+    <option value="Art">Art</option>
+    <option value="Tech">Tech</option>
+  </select>
+
+  <br /><br />
+  <label for="searchInput">Search by Name: </label>
+  <input type="text" id="searchInput" placeholder="Type event name..." />
+
+  <div id="eventsContainer"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+main.js:
+const events = [
+  { id: 1, name: "Jazz Night", category: "Music", seats: 10 },
+  { id: 2, name: "Painting Workshop", category: "Art", seats: 5 },
+  { id: 3, name: "Tech Talk", category: "Tech", seats: 8 },
+  { id: 4, name: "Classical Concert", category: "Music", seats: 0 },
+];
+
+const eventsContainer = document.getElementById("eventsContainer");
+const categoryFilter = document.getElementById("categoryFilter");
+const searchInput = document.getElementById("searchInput");
+
+// Render events filtered by category and search term
+function renderEvents() {
+  const category = categoryFilter.value;
+  const searchTerm = searchInput.value.toLowerCase();
+
+  eventsContainer.innerHTML = "";
+
+  // Filter events by category and name
+  const filteredEvents = events.filter(event => {
+    const categoryMatch = category === "All" || event.category === category;
+    const nameMatch = event.name.toLowerCase().includes(searchTerm);
+    return categoryMatch && nameMatch;
+  });
+
+  filteredEvents.forEach(event => {
+    const card = document.createElement("div");
+    card.className = "event-card";
+
+    card.innerHTML = `
+      <strong>${event.name}</strong> (${event.category})<br/>
+      Seats: ${event.seats}<br/>
+      <button ${event.seats === 0 ? "disabled" : ""} onclick="register(${event.id})">Register</button>
+    `;
+
+    eventsContainer.appendChild(card);
+  });
+
+  if (filteredEvents.length === 0) {
+    eventsContainer.textContent = "No events found.";
+  }
+}
+
+// Register function called by button onclick
+function register(eventId) {
+  const event = events.find(e => e.id === eventId);
+
+  if (!event || event.seats === 0) {
+    alert("Registration not possible.");
+    return;
+  }
+
+  event.seats--;
+  alert(`Registered for ${event.name}! Seats left: ${event.seats}`);
+  renderEvents();
+}
+
+// Attach event listeners
+categoryFilter.onchange = renderEvents;
+
+searchInput.onkeydown = (e) => {
+  // Small delay to wait for input update
+  setTimeout(renderEvents, 100);
+};
+
+// Initial render
+renderEvents();
+
+
+
+9.
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Async Event Fetch</title>
+  <style>
+    #loading {
+      font-weight: bold;
+      color: blue;
+      display: none;
+    }
+    .event {
+      margin-bottom: 8px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Upcoming Events</h1>
+  <div id="loading">Loading events...</div>
+  <div id="eventsContainer"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+JSON:
+[
+  { "id": 1, "name": "Music Festival", "date": "2025-07-01" },
+  { "id": 2, "name": "Art Expo", "date": "2025-07-10" },
+  { "id": 3, "name": "Tech Conference", "date": "2025-07-20" }
+]
+
+
+main.js:
+const loadingEl = document.getElementById("loading");
+const eventsContainer = document.getElementById("eventsContainer");
+
+function renderEvents(events) {
+  eventsContainer.innerHTML = "";
+  events.forEach(event => {
+    const div = document.createElement("div");
+    div.className = "event";
+    div.textContent = `${event.name} - ${event.date}`;
+    eventsContainer.appendChild(div);
+  });
+}
+
+// Fetch events with .then()/.catch()
+function fetchEventsThen() {
+  loadingEl.style.display = "block";
+  eventsContainer.innerHTML = "";
+
+  fetch("https://mocki.io/v1/2b973a40-6d9d-40d4-89d5-363d8b06e441") // mock API URL example
+    .then(response => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.json();
+    })
+    .then(data => {
+      loadingEl.style.display = "none";
+      renderEvents(data);
+    })
+    .catch(error => {
+      loadingEl.style.display = "none";
+      eventsContainer.textContent = "Failed to load events: " + error.message;
+    });
+}
+
+fetchEventsThen();
+
+
+
+10.
+JAVASCRIPT:
+
+// Sample events array
+const events = [
+  { id: 1, name: "Music Fest", category: "Music", seats: 10 },
+  { id: 2, name: "Art Gallery", category: "Art", seats: 5 },
+  { id: 3, name: "Tech Meetup", category: "Tech", seats: 8 },
+];
+
+// Function with default parameter and destructuring
+function filterEvents(eventsList = [], category = "All") {
+  // Clone eventsList to avoid mutation
+  const clonedEvents = [...eventsList];
+
+  // Filter events by category (default: show all)
+  return category === "All"
+    ? clonedEvents
+    : clonedEvents.filter(({ category: cat }) => cat === category);
+}
+
+// Usage examples:
+
+// Get all events (default)
+const allEvents = filterEvents(events);
+console.log("All Events:", allEvents);
+
+// Get only Music events
+const musicEvents = filterEvents(events, "Music");
+console.log("Music Events:", musicEvents);
+
+// Destructure event details for display
+musicEvents.forEach(({ id, name, seats }) => {
+  console.log(`Event #${id}: ${name} — Seats left: ${seats}`);
+});
+
+
+11.
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Registration Form</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    .success {
+      color: green;
+      margin-top: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 8px;
+    }
+    input, select {
+      margin-top: 4px;
+      padding: 6px;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Register for an Event</h1>
+  
+  <form id="registrationForm" novalidate>
+    <label>
+      Name:
+      <input type="text" name="name" />
+      <span class="error" id="nameError"></span>
+    </label>
+    
+    <label>
+      Email:
+      <input type="email" name="email" />
+      <span class="error" id="emailError"></span>
+    </label>
+    
+    <label>
+      Select Event:
+      <select name="event">
+        <option value="">-- Select an Event --</option>
+        <option value="music">Music Fest</option>
+        <option value="art">Art Expo</option>
+        <option value="tech">Tech Conference</option>
+      </select>
+      <span class="error" id="eventError"></span>
+    </label>
+    
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="resultMessage" class="success"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+main.js:
+
+
+const form = document.getElementById("registrationForm");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form from submitting/reloading
+  
+  // Clear previous errors and result message
+  document.getElementById("nameError").textContent = "";
+  document.getElementById("emailError").textContent = "";
+  document.getElementById("eventError").textContent = "";
+  document.getElementById("resultMessage").textContent = "";
+
+  const name = form.elements["name"].value.trim();
+  const email = form.elements["email"].value.trim();
+  const selectedEvent = form.elements["event"].value;
+
+  let valid = true;
+
+  // Simple validation
+  if (!name) {
+    document.getElementById("nameError").textContent = "Name is required.";
+    valid = false;
+  }
+
+  if (!email) {
+    document.getElementById("emailError").textContent = "Email is required.";
+    valid = false;
+  } else if (!validateEmail(email)) {
+    document.getElementById("emailError").textContent = "Invalid email format.";
+    valid = false;
+  }
+
+  if (!selectedEvent) {
+    document.getElementById("eventError").textContent = "Please select an event.";
+    valid = false;
+  }
+
+  if (valid) {
+    // Simulate successful registration
+    document.getElementById("resultMessage").textContent = `Thank you, ${name}, for registering for the ${selectedEvent} event!`;
+    form.reset();
+  }
+});
+
+// Email validation helper function
+function validateEmail(email) {
+  // Simple regex for email validation
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+
+
+12.
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AJAX Registration</title>
+  <style>
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Register for Event (AJAX)</h1>
+
+  <form id="registrationForm">
+    <label>
+      Name:
+      <input type="text" name="name" required />
+    </label><br/><br/>
+
+    <label>
+      Email:
+      <input type="email" name="email" required />
+    </label><br/><br/>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="message" class="message"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+main.js:
+const form = document.getElementById("registrationForm");
+const messageDiv = document.getElementById("message");
+
+// Mock API endpoint (use your own or this placeholder)
+const mockApiUrl = "https://jsonplaceholder.typicode.com/posts";
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  messageDiv.textContent = "Submitting...";
+  messageDiv.className = "message";
+
+  const formData = {
+    name: form.elements["name"].value.trim(),
+    email: form.elements["email"].value.trim()
+  };
+
+  // Simulate network delay using setTimeout inside a Promise
+  function delayedFetch(url, options) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        fetch(url, options)
+          .then(response => {
+            if (!response.ok) throw new Error("Network error");
+            return response.json();
+          })
+          .then(data => resolve(data))
+          .catch(err => reject(err));
+      }, 2000); // 2-second delay
+    });
+  }
+
+  delayedFetch(mockApiUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+    .then(data => {
+      messageDiv.textContent = `Success! Registered user ID: ${data.id}`;
+      messageDiv.className = "message success";
+      form.reset();
+    })
+    .catch(error => {
+      messageDiv.textContent = "Registration failed: " + error.message;
+      messageDiv.className = "message error";
+    });
+});
+
+
+
+13.
+
+JS:
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  console.log("Form submit triggered");
+
+  const name = form.elements["name"].value.trim();
+  const email = form.elements["email"].value.trim();
+
+  console.log("Name:", name);
+  console.log("Email:", email);
+
+  // Proceed with fetch call, logging payload
+  const payload = { name, email };
+  console.log("Payload to send:", payload);
+
+  fetch("https://example.com/api", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  })
+    .then(response => {
+      console.log("Response received:", response);
+      if (!response.ok) throw new Error("Network error");
+      return response.json();
+    })
+    .then(data => console.log("Success data:", data))
+    .catch(error => console.error("Fetch error:", error));
+});
+
+
+14.
+html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>jQuery Event Demo</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .event-card {
+      display: none;
+      padding: 10px;
+      margin: 10px 0;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<button id="registerBtn">Show Events</button>
+
+<div class="event-card" id="event1">Music Fest</div>
+<div class="event-card" id="event2">Art Expo</div>
+<div class="event-card" id="event3">Tech Conference</div>
+
+<script>
+  $(document).ready(function() {
+    $('#registerBtn').click(function() {
+      $('.event-card').fadeIn(); // Show all event cards with fade effect
+
+      // Hide after 3 seconds with fadeOut
+      setTimeout(() => {
+        $('.event-card').fadeOut();
+      }, 3000);
+    });
+  });
+</script>
+
+</body>
+</html>
+
