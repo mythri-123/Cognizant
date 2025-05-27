@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base Template</title>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <!-- Navigation content goes here -->
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <!-- Main content goes here -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <!-- Footer content goes here -->
+  </footer>
+
+</body>
+</html>
+
+
+
+
+2.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal</title>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="help.html" target="_blank">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Home Section -->
+    <section id="home">
+      <h1>Welcome to Our Portal</h1>
+      <p>This is the home section.</p>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p>Details about events will be listed here.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Here's how you can reach us.</p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Portal Inc.</p>
+  </footer>
+
+</body>
+</html>
+
+
+
+3.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal</title>
+  <style>
+    /* Internal CSS for unique welcome banner */
+    #welcomeBanner {
+      background-color: #007BFF; /* Blue background */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Reusable class for emphasis */
+    .highlight {
+      background-color: yellow;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="help.html" target="_blank">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Welcome Banner -->
+  <div id="welcomeBanner">
+    <h1>Welcome Back, User!</h1>
+    <p class="highlight">You're logged in.</p>
+    <p>
+      Today's special: 
+      <span style="color: red; font-weight: bold;">50% off all events!</span>
+    </p>
+  </div>
+
+  <!-- Main -->
+  <main>
+    <!-- Home Section -->
+    <section id="home">
+      <h2 class="highlight">Home</h2>
+      <p>This is the home section.</p>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p>Details about events will be listed here.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Here's how you can reach us.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Portal Inc.</p>
+  </footer>
+
+</body>
+</html>
+
+
+4.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal</title>
+  <style>
+    /* Styling for the welcome banner */
+    #welcomeBanner {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Highlight class */
+    .highlight {
+      background-color: yellow;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Image styling class */
+    .event-img {
+      border: 3px solid #ccc;
+      width: 150px;
+      height: auto;
+    }
+
+    table {
+      margin: 20px auto;
+      border-spacing: 20px;
+    }
+
+    caption {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="help.html" target="_blank">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Welcome Banner -->
+  <div id="welcomeBanner">
+    <h1>Welcome Back, User!</h1>
+    <p class="highlight">You're logged in.</p>
+    <p>Today's special: <span style="color: red; font-weight: bold;">50% off all events!</span></p>
+  </div>
+
+  <!-- Main -->
+  <main>
+    <!-- Events Section -->
+    <section id="events">
+      <h2>Community Event Gallery</h2>
+      <table>
+        <caption>Photos from Past Community Events</caption>
+        <tr>
+          <td>
+            <img src="event1.jpg" alt="Music Festival 2024" title="Music Festival 2024" class="event-img" />
+            <p>Music Festival</p>
+          </td>
+          <td>
+            <img src="event2.jpg" alt="Neighborhood Cleanup" title="Neighborhood Cleanup" class="event-img" />
+            <p>Cleanup Day</p>
+          </td>
+          <td>
+            <img src="event3.jpg" alt="Holiday Parade" title="Holiday Parade" class="event-img" />
+            <p>Holiday Parade</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="event4.jpg" alt="Art in the Park" title="Art in the Park" class="event-img" />
+            <p>Art in the Park</p>
+          </td>
+          <td>
+            <img src="event5.jpg" alt="Food Truck Rally" title="Food Truck Rally" class="event-img" />
+            <p>Food Truck Rally</p>
+          </td>
+          <td>
+            <img src="event6.jpg" alt="Farmers Market" title="Farmers Market" class="event-img" />
+            <p>Farmers Market</p>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Portal Inc.</p>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+5.
+HTML:
+<section id="registration">
+  <h2>Event Registration</h2>
+
+  <form id="eventForm">
+    <label for="name">Name: *</label><br />
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Your full name"
+      required
+      autofocus
+    /><br /><br />
+
+    <label for="email">Email: *</label><br />
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="example@domain.com"
+      required
+    /><br /><br />
+
+    <label for="date">Event Date: *</label><br />
+    <input type="date" id="date" name="date" required /><br /><br />
+
+    <label for="eventType">Event Type: *</label><br />
+    <select id="eventType" name="eventType" required>
+      <option value="" disabled selected>Select an event</option>
+      <option value="music">Music Festival</option>
+      <option value="cleanup">Neighborhood Cleanup</option>
+      <option value="parade">Holiday Parade</option>
+      <option value="art">Art in the Park</option>
+    </select>
+    <br /><br />
+
+    <label for="message">Additional Message:</label><br />
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      placeholder="Any special requests or questions?"
+    ></textarea>
+    <br /><br />
+
+    <button type="submit">Register</button>
+  </form>
+
+  <br />
+  <output id="confirmation" style="font-weight: bold; color: green;"></output>
+
+</section>
+
+CSS:
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+JAVA SCRIPT:
+<script>
+  document.getElementById('eventForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent actual form submission
+
+    // Collect form data
+    const name = e.target.name.value.trim();
+    const email = e.target.email.value.trim();
+    const date = e.target.date.value;
+    const eventType = e.target.eventType.options[e.target.eventType.selectedIndex].text;
+
+    // Confirmation message
+    const confirmationMsg = `Thank you, ${name}! You have registered for the ${eventType} on ${date}. A confirmation email will be sent to ${email}.`;
+
+    // Show confirmation
+    document.getElementById('confirmation').textContent = confirmationMsg;
+
+    // Optional: reset form
+    e.target.reset();
+  });
+</script>
+
+
+
+6.
+HTML:
+<section id="feedback">
+  <h2>Event Feedback</h2>
+
+  <form id="feedbackForm" onsubmit="return false;">
+    <label for="phone">Phone Number (10 digits): *</label><br />
+    <input
+      type="text"
+      id="phone"
+      name="phone"
+      placeholder="e.g. 1234567890"
+      maxlength="10"
+      required
+      onblur="validatePhone()"
+    />
+    <span id="phoneError" style="color: red; margin-left: 10px;"></span>
+    <br /><br />
+
+    <label for="eventSelect">Select Event:</label><br />
+    <select id="eventSelect" onchange="showFee()">
+      <option value="" disabled selected>Select an event</option>
+      <option value="50">Music Festival - $50</option>
+      <option value="30">Neighborhood Cleanup - $30</option>
+      <option value="40">Holiday Parade - $40</option>
+      <option value="25">Art in the Park - $25</option>
+    </select>
+    <p id="feeDisplay" style="font-weight: bold;"></p>
+    <br />
+
+    <label for="feedbackText">Your Feedback:</label><br />
+    <textarea
+      id="feedbackText"
+      name="feedbackText"
+      rows="5"
+      placeholder="Write your feedback here..."
+      onkeydown="countChars()"
+      onkeyup="countChars()"
+      maxlength="500"
+    ></textarea>
+    <p>Characters used: <span id="charCount">0</span>/500</p>
+    <br />
+
+    <button id="submitBtn" onclick="submitFeedback()">Submit Feedback</button>
+  </form>
+
+  <br />
+
+  <img
+    id="eventImg"
+    src="event-thumbnail.jpg"
+    alt="Event Thumbnail"
+    title="Double-click to enlarge"
+    style="width: 200px; cursor: pointer; border: 2px solid #ccc; border-radius: 6px;"
+    ondblclick="enlargeImage()"
+  />
+
+  <p id="confirmationMsg" style="color: green; font-weight: bold; margin-top: 15px;"></p>
+</section>
+
+JAVASCRIPT:
+before closingbody:
+<script>
+  // Validate phone number on blur
+  function validatePhone() {
+    const phoneInput = document.getElementById('phone');
+    const phoneError = document.getElementById('phoneError');
+    const phone = phoneInput.value.trim();
+
+    const phoneRegex = /^\d{10}$/; // exactly 10 digits
+
+    if (!phoneRegex.test(phone)) {
+      phoneError.textContent = 'Please enter a valid 10-digit phone number.';
+      phoneInput.focus();
+      return false;
+    } else {
+      phoneError.textContent = '';
+      return true;
+    }
+  }
+
+  // Show fee on dropdown change
+  function showFee() {
+    const select = document.getElementById('eventSelect');
+    const feeDisplay = document.getElementById('feeDisplay');
+
+    if (select.value) {
+      feeDisplay.textContent = `Selected event fee: $${select.value}`;
+    } else {
+      feeDisplay.textContent = '';
+    }
+  }
+
+  // Show confirmation on submit click
+  function submitFeedback() {
+    if (!validatePhone()) {
+      return;
+    }
+
+    const confirmation = document.getElementById('confirmationMsg');
+    confirmation.textContent = 'Thank you for your feedback! We appreciate your time.';
+  }
+
+  // Enlarge image on double-click toggle
+  function enlargeImage() {
+    const img = document.getElementById('eventImg');
+    if (img.style.width === '400px') {
+      img.style.width = '200px';
+      img.style.borderColor = '#ccc';
+    } else {
+      img.style.width = '400px';
+      img.style.borderColor = '#007BFF';
+    }
+  }
+
+  // Count characters in textarea
+  function countChars() {
+    const textarea = document.getElementById('feedbackText');
+    const charCount = document.getElementById('charCount');
+    charCount.textContent = textarea.value.length;
+  }
+</script>
+
+
+7.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Promo Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #message {
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    // Show message when video is ready to play
+    function videoCanPlay() {
+      document.getElementById("message").textContent = "Video ready to play";
+    }
+
+    // Warn user before leaving the page
+    window.onbeforeunload = function(event) {
+      return "Are you sure you want to leave? The form or page might be unfinished.";
+    };
+  </script>
+</head>
+<body>
+  <h1>Welcome to the Media Event</h1>
+  <video width="640" controls oncanplay="videoCanPlay()">
+    <source src="promo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p id="message"></p>
+</body>
+</html>
+
+
+8.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Save Event Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    select, button {
+      margin-top: 10px;
+      display: block;
+    }
+  </style>
+  <script>
+    // Save preference to localStorage when selection changes
+    function savePreference() {
+      const eventType = document.getElementById("eventType").value;
+      localStorage.setItem("preferredEvent", eventType);
+      sessionStorage.setItem("lastVisit", new Date().toISOString());
+    }
+
+    // On page load, pre-select the saved preference
+    window.onload = function() {
+      const saved = localStorage.getItem("preferredEvent");
+      if (saved) {
+        document.getElementById("eventType").value = saved;
+      }
+    };
+
+    // Clear preferences from both storages
+    function clearPreferences() {
+      localStorage.clear();
+      sessionStorage.clear();
+      alert("Preferences cleared!");
+      document.getElementById("eventType").selectedIndex = 0;
+    }
+  </script>
+</head>
+<body>
+  <h1>Select Your Preferred Event Type</h1>
+
+  <label for="eventType">Event Type:</label>
+  <select id="eventType" onchange="savePreference()">
+    <option value="">--Select an option--</option>
+    <option value="Workshop">Workshop</option>
+    <option value="Webinar">Webinar</option>
+    <option value="Conference">Conference</option>
+    <option value="Meetup">Meetup</option>
+  </select>
+
+  <button onclick="clearPreferences()">Clear Preferences</button>
+</body>
+</html>
+
+
+
+9.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nearby Events Locator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #output {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+  <script>
+    function findNearbyEvents() {
+      const output = document.getElementById("output");
+
+      if (!navigator.geolocation) {
+        output.textContent = "Geolocation is not supported by your browser.";
+        return;
+      }
+
+      output.textContent = "Locating...";
+
+      const options = {
+        enableHighAccuracy: true,
+        timeout: 10000, // 10 seconds
+        maximumAge: 0
+      };
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          output.textContent = `Your location: Latitude ${lat.toFixed(5)}, Longitude ${lon.toFixed(5)}`;
+        },
+        (error) => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              output.textContent = "Permission denied. Please allow location access.";
+              break;
+            case error.POSITION_UNAVAILABLE:
+              output.textContent = "Location information is unavailable.";
+              break;
+            case error.TIMEOUT:
+              output.textContent = "Location request timed out.";
+              break;
+            default:
+              output.textContent = "An unknown error occurred.";
+          }
+        },
+        options
+      );
+    }
+  </script>
+</head>
+<body>
+  <h1>Event Finder</h1>
+  <button onclick="findNearbyEvents()">Find Nearby Events</button>
+  <div id="output"></div>
+</body>
+</html>
+
+
+10.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debugging Demo</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Debugging Demo Page</h1>
+  <button onclick="moveBox()">Move Box</button>
+  <div id="box"></div>
+
+  <script>
+    let position = 0;
+
+    function moveBox() {
+      console.log("Moving box...");
+
+      position += 50;
+      const box = document.getElementById("box");
+
+      // Introduce a bug: typo in 'style'
+      box.styl.left = position + "px";
+
+      console.log("New position:", position);
+    }
+  </script>
+</body>
+</html>
+
+cognizanthtml.txt
+Page 3 of 3
